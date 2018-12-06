@@ -2,10 +2,6 @@ html {
   background-color: red;
 }
 
-#root{
-  background-color: red;
-}
-
 .movieIMG{
   max-height: 200px;
   justify-content: center;

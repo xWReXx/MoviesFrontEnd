@@ -1,5 +1,28 @@
-.App {
+html {
+  background-color: red;
+}
+
+#root{
+  background-color: red;
+}
+
+.movieIMG{
+  max-height: 200px;
+  justify-content: center;
+}
+
+.movies{
+  background-color: white;
   text-align: center;
+}
+
+.movieCSS{
+  align-content: center !important;
+}
+
+.appHeader{
+  color: red;
+  background-color: white;
 }
 
 .App-logo {

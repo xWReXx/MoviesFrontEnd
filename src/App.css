@@ -30,7 +30,8 @@ html {
 
 .movies{
   display: flex;
-  align-items: center;
+  justify-items: center;
+  flex-direction: column;
   background-color: white;
   margin-top: 20px;
   padding: 5px;

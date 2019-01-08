@@ -16,7 +16,7 @@ class App extends Component {
       open1: false,
       movies: [],
       loaded: false,
-      movieID: 0,
+      movieID: 0
     }
   }
 
@@ -24,6 +24,12 @@ class App extends Component {
     const response = await fetch('https://g102-movie-project.herokuapp.com')
     const json = await response.json()
     this.setState({movies: json, loaded: true})
+  }
+
+  loadMovies = () =>{
+    fetch('https://g102-movie-project.herokuapp.com')
+    .then(response => response.json())
+    .then((response) => this.setState({movies: response, loaded: true}))
   }
 
   post = (data) =>{
@@ -35,23 +41,18 @@ class App extends Component {
         },
       body: JSON.stringify(data)
     })
+    .then(response => response.json())
+    .then(() => {
+      this.loadMovies()
+    })
   }
 
-delete = (movieID) =>{
-  fetch('https://g102-movie-project.herokuapp.com/' + movieID, {
-  method: 'DELETE',
-  })
-}
-
-deleteMovie = (e) => {
-  console.log("test")
-  this.setState({deleteID: e.target.id})
-  var movieID = this.setState.DeleteID
-  setTimeout( ()=>{
-    this.delete(movieID)
-  }, 500)
-
-}
+  deleteMovie = (e) =>{
+    fetch('https://g102-movie-project.herokuapp.com/' + e.target.id, {
+    method: 'DELETE',
+    })
+    .then(() => this.loadMovies())
+  }
 
 submitMovie = (e) => {
   console.log("test")
@@ -102,7 +103,7 @@ submitMovie = (e) => {
     this.setState({movieID: e.target.id})
     setTimeout( ()=>{
       this.setState({open: true})
-    }, 500)
+    }, 20)
   }
 
   render() {

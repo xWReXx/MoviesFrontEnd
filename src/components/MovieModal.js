@@ -5,7 +5,7 @@ import Modal from 'react-responsive-modal';
 const MovieModal = (props) => {
 
     const ModalContent = props.movies.map(movie => {
-        if (movie.id === props.movieID){
+        if (movie.id == props.movieID){
             return (   
                 <div>
                 <h5>{movie.title}</h5>      
@@ -16,6 +16,7 @@ const MovieModal = (props) => {
                 </div>         
         )
         }
+        return null
         
     })
 

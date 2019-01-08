@@ -4,8 +4,8 @@ const MovieList = (props) => {
     
     const Movies = props.movies.map(movie => {
         return (
-            <div>
-                <div className="row movies">
+            <div className="container movies">
+                <div className="row ">
                     <div className="col m3">
                         <h5>Movie Title:</h5>
                         {movie.title}
@@ -26,14 +26,14 @@ const MovieList = (props) => {
                         <img className="movieIMG" src={movie.imgURL} alt="blank"/>
                     </div>
                 </div>
-                <div className="row">
-                    <button id={movie.id} onClick={props.deleteMovie} className="waves-effect waves-light btn postBtn">Delete movie</button>
-                </div>
+                    <div className="row">
+                        <button id={movie.id} onClick={props.deleteMovie} className="waves-effect waves-light btn postBtn">Delete movie</button>
+                    </div>               
             </div>
         )
     })
     return (
-        <div className='container'>{Movies}</div>
+        <div className=''>{Movies}</div>
     )
 }
 

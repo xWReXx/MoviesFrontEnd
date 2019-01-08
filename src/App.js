@@ -32,18 +32,25 @@ class App extends Component {
     .then((response) => this.setState({movies: response, loaded: true}))
   }
 
-  post = (data) =>{
+  submitMovie = () =>{
+    let body = {
+      title: this.state.title,
+      director: this.state.director,
+      year: this.state.year,
+      rating: this.state.rating,
+      imgURL: this.state.imgURL
+    }
       fetch('https://g102-movie-project.herokuapp.com', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
         },
-      body: JSON.stringify(data)
+      body: JSON.stringify(body)
     })
-    .then(response => response.json())
     .then(() => {
       this.loadMovies()
+      this.setState({ open1: false });
     })
   }
 
@@ -54,18 +61,6 @@ class App extends Component {
     .then(() => this.loadMovies())
   }
 
-submitMovie = (e) => {
-  console.log("test")
-  e.preventDefault();
-  let body = {
-    title: this.state.title,
-    director: this.state.director,
-    year: this.state.year,
-    rating: this.state.rating,
-    imgURL: this.state.imgURL
-  }
-  this.post(body)
-}
 
   logger = (e) => {
     switch (e.target.id){
@@ -95,9 +90,7 @@ submitMovie = (e) => {
     this.setState({ open: false });
   }
 
-  onCloseModal1 = () => {
-    this.setState({ open1: false });
-  }
+  
 
   modalMovieID = (e) => {
     this.setState({movieID: e.target.id})

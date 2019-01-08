@@ -1,7 +1,7 @@
 import React from 'react'
 
 const MovieList = (props) => {
-    console.log(props)
+    
     const Movies = props.movies.map(movie => {
         return (
             <div>
@@ -27,9 +27,9 @@ const MovieList = (props) => {
                     </div>
                 </div>
                 <div className="row">
-                    <button className="waves-effect waves-light btn postBtn">Delete movie</button>
+                    <button id={movie.id} onClick={props.deleteMovie} className="waves-effect waves-light btn postBtn">Delete movie</button>
                 </div>
-            </div>    
+            </div>
         )
     })
     return (

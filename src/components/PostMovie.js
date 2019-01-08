@@ -6,36 +6,39 @@ const PostMovie = (props) => {
     return (
         <div>
             <Modal open={props.open} onClose={props.onCloseModal1} center>
-                <div classNameName="container">
+                <div className="container">
                     <div className="row">
                         <div className="input-field col s12">
-                            <textarea id="textarea1" className="materialize-textarea"></textarea>
-                            <label for="textarea1">Movie Title</label>
+                            <textarea id="title" className="materialize-textarea" onChange={props.logger}></textarea>
+                            <label for="title">Movie Title</label>
                         </div>
                     </div>
                     <div className="row">
                         <div className="input-field col s12">
-                            <textarea id="textarea1" className="materialize-textarea"></textarea>
-                            <label for="textarea1">Director</label>
+                            <textarea id="director" className="materialize-textarea" onChange={props.logger}></textarea>
+                            <label for="director">Director</label>
                         </div>
                     </div>
                     <div className="row">
                         <div className="input-field col s12">
-                            <textarea id="textarea1" className="materialize-textarea"></textarea>
-                            <label for="textarea1">Year</label>
+                            <textarea id="year" className="materialize-textarea" onChange={props.logger}></textarea>
+                            <label for="year">Year</label>
                         </div>
                     </div>
                     <div className="row">
                         <div className="input-field col s12">
-                            <textarea id="textarea1" className="materialize-textarea"></textarea>
-                            <label for="textarea1">Rate move 1-5</label>
+                            <textarea id="rating" className="materialize-textarea" onChange={props.logger}></textarea>
+                            <label for="rating">Rate move 1-5</label>
                         </div>
                     </div>
                     <div className="row">
                         <div className="input-field col s12">
-                            <textarea id="textarea1" className="materialize-textarea"></textarea>
-                            <label for="textarea1">Movie Image URL</label>
+                            <textarea id="imgURL" className="materialize-textarea" onChange={props.logger}></textarea>
+                            <label for="IMGurl">Movie Image URL</label>
                         </div>
+                    </div>
+                    <div className="row">
+                        <button type="submit" onClick={props.submitMovie} className="waves-effect waves-light btn postBtn">Add Movie</button>
                     </div>
                 </div>
             </Modal>

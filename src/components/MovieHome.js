@@ -4,7 +4,7 @@ import React from 'react'
 const MovieHome = (props) => {
     const Movies = props.movies.map(movie => {
         return (          
-                <img className="movieHomeIMG" value={movie.id} onClick={props.onOpenModal} src={movie.imgURL} alt="blank"/>           
+                <img className="movieHomeIMG" id={movie.id} onClick={props.modalMovieID} src={movie.imgURL} alt="blank"/>           
         )
     })
 

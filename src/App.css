@@ -13,9 +13,12 @@ html {
   max-height: 200px;
   justify-content: center;
 }
+.movieModalIMG{
+  max-height: 500px;
+}
 
 .movieHomeIMG {
-  max-height: 400px;
+  max-height: 300px;
   margin-top: 10px;
 }
 

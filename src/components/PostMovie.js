@@ -5,7 +5,7 @@ const PostMovie = (props) => {
 
     return (
         <div>
-            <Modal open={props.open} onClose={props.onCloseModal1} center>
+            <Modal open={props.open1} onClose={props.onCloseModal1} center>
                 <div className="container">
                     <div className="row">
                         <div className="input-field col s12">
@@ -34,7 +34,7 @@ const PostMovie = (props) => {
                     <div className="row">
                         <div className="input-field col s12">
                             <textarea id="imgURL" className="materialize-textarea" onChange={props.logger}></textarea>
-                            <label for="IMGurl">Movie Image URL</label>
+                            <label for="imgURL">Movie Image URL</label>
                         </div>
                     </div>
                     <div className="row">

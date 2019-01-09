@@ -28,12 +28,13 @@ const MovieList = (props) => {
                 </div>
                     <div className="row">
                         <button id={movie.id} onClick={props.deleteMovie} className="waves-effect waves-light btn postBtn">Delete movie</button>
+                        <button id={movie.id} onClick={props.modalEditMovieID} className="waves-effect waves-light btn postBtn">Edit movie</button>
                     </div>               
             </div>
         )
     })
     return (
-        <div className=''>{Movies}</div>
+        <div>{Movies}</div>
     )
 }
 

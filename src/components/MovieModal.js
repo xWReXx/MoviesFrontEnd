@@ -14,10 +14,9 @@ const MovieModal = (props) => {
                 <p>Year: {movie.year}</p> 
                 <p>Rating: {movie.rating}</p> 
                 </div>         
-        )
+            )
         }
-        return null
-        
+        return null    
     })
 
     return (
